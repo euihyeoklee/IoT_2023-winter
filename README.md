@@ -1,3 +1,3 @@
 # IoT_2021-winter
 
-Hello world
+## 2021년 겨울학기 IoT 특론 
