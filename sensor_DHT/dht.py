@@ -17,7 +17,7 @@ try:
         humid, temp = dht.read_retry(sensor, pin)
 
         if humid is not None and temp is not None:
-            print("Temp=", temp, " Humid=", humid)
+            print("Temp=", round(temp,2), " Humid=", round(humid,2))
         else:
             print("Failed to get reading")
         time.sleep(0.5)
