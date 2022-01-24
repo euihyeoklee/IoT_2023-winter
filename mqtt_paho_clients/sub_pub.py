@@ -10,7 +10,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     # 브로커로부터 구독 메시지를 받으면 실행됨
     
-    print("Topic: " + msg.topic + " Message: " + str(msg.payload.decode("utf-8")))
+    print("Topic: " + msg.topic + " Message: " + msg.payload.decode("utf-8"))
     
     # 메시지에 담긴 페이로드 데이터를 정수형으로 변환하여 변수에 저장
     temp = int(msg.payload.decode("utf-8"))
