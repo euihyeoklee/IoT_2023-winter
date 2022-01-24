@@ -5,7 +5,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("room1/temp")
         
 def on_message(client, userdata, msg):
-    print("Topic: " + msg.topic + " Message: " + str(msg.payload.decode("utf-8")))
+    print("Topic: " + msg.topic + " Message: " + msg.payload.decode("utf-8"))
 
 client = mqtt.Client()
 client.on_connect = on_connect
