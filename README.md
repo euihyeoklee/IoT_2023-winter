@@ -1,3 +1,1 @@
-# IoT_2021-winter
-
-## 2021년 겨울학기 IoT 특론 
+# IoT_2022-fall
