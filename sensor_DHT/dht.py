@@ -10,23 +10,22 @@ GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
 
 pin = 5
-sensor = dht11.DHT11(pin)
+instance = dht11.DHT11(pin)
 
 # 라즈베리 파이의 GPIO 21번 핀이 DHT 센서의 데이터 핀(2번 핀)에 연결된 상태인 경우
 
 
 try:
     while True:
-        # read 함수는 2가지 값을 동시에 반환하는 함수. 첫번째 값이 습도, 두번째 값이 온도
-        result = sensor.read()
-    
+        result = instance.read()
         if result.is_valid():
-            print("Temperature: %-3.1f C" % result.temperature)
-            print("Humidity: %-3.1f %%" % result.humidity)
-        else:
-            print("Error: %d" % result.error_code)
+            print("Last valid input: " + str(datetime.datetime.now()))
+            print("Temperature: % -3.1f C" % result.temperature)
+            print("Humidity: % -3.1f %%" % result.humidity)
+    		
         time.sleep(1)
-        
+
 except KeyboardInterrupt:
-    print("finished")
+    gpio.cleanup()
+
 
